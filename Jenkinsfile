@@ -5,7 +5,7 @@ pipeline {
         // Environment variables for the pipeline
         DJANGO_DIR = 'django-api'
         FRONTEND_DIR = 'Crud/Crud'
-        PYTHON_VERSION = '3.11'
+        PYTHON_VERSION = '3.14'
         NODE_VERSION = '18'
         VIRTUAL_ENV = "${WORKSPACE}/${DJANGO_DIR}/venv"
     }
