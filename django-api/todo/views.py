@@ -1,7 +1,7 @@
 from rest_framework import viewsets, generics, permissions, status
 from rest_framework.response import Response
-from .models import Task
-from .serializers import TaskSerializer, UserSerializer
+from .models import Task, Category
+from .serializers import TaskSerializer, UserSerializer, CategorySerializer
 
 class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
@@ -10,6 +10,16 @@ class TaskViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         return Task.objects.filter(user=self.request.user).order_by('-created_at')
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    serializer_class=CategorySerializer
+    permission_classes=[permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Category.objects.filter(user=self.request.user)
+    
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 

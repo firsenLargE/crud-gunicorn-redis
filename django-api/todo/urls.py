@@ -1,13 +1,14 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken.views import obtain_auth_token
-from .views import TaskViewSet, RegisterView
+from .views import TaskViewSet, RegisterView, CategoryViewSet
 
 router = DefaultRouter()
-router.register(r'tasks', TaskViewSet, basename='task')
+router.register(r"tasks", TaskViewSet, basename="task")
+router.register(r"categories", CategoryViewSet, basename="category")
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('signup/', RegisterView.as_view(), name='signup'),
-    path('login/', obtain_auth_token, name='login'),
+    path("", include(router.urls)),
+    path("signup/", RegisterView.as_view(), name="signup"),
+    path("login/", obtain_auth_token, name="login"),
 ]

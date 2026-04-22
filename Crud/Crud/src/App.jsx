@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
+import Categories from "./Categories";
 function App() {
-  // Track login status
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  if (localStorage.getItem("access_token") && !isLoggedIn) { 
+    setIsLoggedIn(true);
+  }
 
   return (
     <Router>
@@ -23,6 +26,7 @@ function App() {
 
         {/* Redirect default route to login */}
         <Route path="*" element={<Navigate to="/login" />} />
+        <Route path="/categories" element={<Categories />} />
       </Routes>
     </Router>
   );

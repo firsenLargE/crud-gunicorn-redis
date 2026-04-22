@@ -85,11 +85,12 @@ const handleUpdate = () => {
   };
 
   return (
+    <div className=" bg-[#445d50] w-full h-screen">
     
-    <div className="p-8 max-w-4xl mx-auto">
+    <div className="p-8 max-w-7xl mx-auto">
       <WelcomeMessage username={user.username} />
-      <p>{  user.username  }</p>
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">CRUD Table</h2>
+      {/* <p className="text-[#445d50]">{  user.username  }</p> text-[#445d50] */}
+      <h2 className="text-2xl font-bold mb-6 text-[#f5c9b5]">CRUD Table</h2>
       
       {/* Form Section */}
       <div className="flex flex-col md:flex-row gap-3 mb-8 bg-gray-50 p-4 rounded-lg border border-gray-200">
@@ -160,7 +161,8 @@ const handleUpdate = () => {
           </tbody>
         </table>
       </div>
-    </div>
+      </div>
+      </div>
   );
 };
 

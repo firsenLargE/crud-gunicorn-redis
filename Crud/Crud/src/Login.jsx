@@ -42,17 +42,10 @@ const Login = ({ setIsLoggedIn }) => {
       setFormData({ username: "", email: "", password: "" });
       console.log("Signup response:", response.data);
      })
-    // if (!formData.username || !formData.email || !formData.password) {
-    //   alert("Please fill all fields");
-    //   return;
-    // }
-    // // Normally you would send data to backend here
-    // alert(`Account created for ${formData.name} (${formData.email})`);
-    // setSignUp(false); // switch back to login
-    // setFormData({ username: "", email: "", password: "" });
   };
 
   return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 " style={{ backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwY2xhc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60')", backgroundSize: 'cover' }}>
     <div className="mx-auto my-10 max-w-sm rounded-lg border border-gray-200 p-8 shadow-sm">
       <h2 className="mb-6 text-center text-2xl font-bold text-blue-500">
         {signUp ? "Sign Up" : "Login"}
@@ -105,7 +98,8 @@ const Login = ({ setIsLoggedIn }) => {
           {signUp ? "Sign Up" : "Login"}
         </button>
       </div>
-    </div>
+      </div>
+      </div>
   );
 };
 
